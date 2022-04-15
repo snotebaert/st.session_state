@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title('st.session_state')
 
-"st.session_state object:", st.session_state
+st.write("st.session_state object:", st.session_state)
 
 def lbs_to_kg():
   st.session_state.kg = st.session_state.lbs/2.2046
