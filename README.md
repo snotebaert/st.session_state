@@ -67,6 +67,11 @@ The above 2 custom functions will be called upon as soon as a numerical value is
 
 In a nutshell, upon entering a number into the `st.numerical_input` box the number is converted by these custom functions.
 
+Finally, the weight values in `kg` and `lbs` units as stored in the session state as `st.session_state.kg` and `st.session_state.lbs` will be printed out via `st.write`:
+```python
+st.header('Output')
+st.write("st.session_state object:", st.session_state)
+```
 
 ## Further reading
 - [Session State](https://docs.streamlit.io/library/api-reference/session-state)
