@@ -1,6 +1,12 @@
-# st.template
+# st.session_state
 
-`st.template` allows writing text and arguments to the Streamlit app.
+We define access to a Streamlit app in a browser tab as a session. For each browser tab that connects to the Streamlit server, a new session is created. Streamlit reruns your script from top to bottom every time you interact with your app. Each reruns takes place in a blank slate: no variables are shared between runs.
+
+Session State is a way to share variables between reruns, for each user session. In addition to the ability to store and persist state, Streamlit also exposes the ability to manipulate state using Callbacks.
+
+In this tutorial, we will illustrate the usage of Session State and Callbacks as we build a weight conversion app.
+
+`st.session_state` allows the implementation of session state in a Streamlit app.
 
 ## Demo app
 
@@ -40,7 +46,17 @@ Firstly, we'll start by creating the title of the app:
 st.title('st.session_state')
 ```
 
-Next, we define custom functions
+Next, we define custom functions for the weight conversion from lbs to kg and vice versa:
+```python
+def lbs_to_kg():
+  st.session_state.kg = st.session_state.lbs/2.2046
+def kg_to_lbs():
+  st.session_state.lbs = st.session_state.kg*2.2046
+```
+
+
+
 
 ## Further reading
-
+- [Session State](https://docs.streamlit.io/library/api-reference/session-state)
+- [Add statefulness to apps](https://docs.streamlit.io/library/advanced-features/session-state)
